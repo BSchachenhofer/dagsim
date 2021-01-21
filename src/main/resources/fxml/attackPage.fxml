@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="498.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AttackPageController">
+    <children>
+        <Label alignment="CENTER" text="Choose Attack Mode" textAlignment="CENTER" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+      <AnchorPane prefHeight="448.0" prefWidth="632.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+              <RadioButton fx:id="rb_none" mnemonicParsing="false" selected="true" text="None" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="35.0">
+               <toggleGroup>
+                  <ToggleGroup fx:id="attackMode" />
+               </toggleGroup>
+            </RadioButton>
+              <Separator prefHeight="5.0" prefWidth="540.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="65.0" />
+            <RadioButton fx:id="rb_fork" mnemonicParsing="false" text="Fork Attack" toggleGroup="$attackMode" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="80.0" />
+            <Separator prefWidth="200.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="110.0" />
+            <RadioButton fx:id="rb_race" mnemonicParsing="false" text="Race Attack" toggleGroup="$attackMode" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="125.0" />
+            <Label text="gossip syncs / divisor :" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="150.0" />
+            <TextField fx:id="tf_race_syncs" layoutX="177.0" layoutY="166.0" prefHeight="25.0" prefWidth="51.0" AnchorPane.leftAnchor="177.0" AnchorPane.topAnchor="147.0" />
+            <Label layoutX="245.0" layoutY="117.0" text="depending on the mode:" AnchorPane.leftAnchor="245.0" AnchorPane.topAnchor="118.0" />
+            <Label layoutX="245.0" layoutY="139.0" text="- attacker performs that many gossip syncs while others perform one" AnchorPane.leftAnchor="245.0" AnchorPane.topAnchor="137.0" />
+            <Label layoutX="245.0" layoutY="159.0" text="- attacker needs only a fraction of the usual time for gossip syncs" AnchorPane.leftAnchor="245.0" AnchorPane.topAnchor="156.0" />
+            <Separator prefWidth="200.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="180.0" />
+            <RadioButton fx:id="rb_split" mnemonicParsing="false" text="Split Attack" toggleGroup="$attackMode" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="195.0" />
+            <CheckBox fx:id="cb_split_start" layoutX="177.0" layoutY="215.0" mnemonicParsing="false" selected="true" text="start late (from a quarter of participant actions / simulation time)" AnchorPane.leftAnchor="177.0" AnchorPane.topAnchor="195.0" />
+            <CheckBox fx:id="cb_split_stop" layoutX="178.0" layoutY="242.0" mnemonicParsing="false" selected="true" text="stop early (from 3 quarters of participant actions / simulation time)" AnchorPane.leftAnchor="177.0" AnchorPane.topAnchor="222.0" />
+            <Label layoutX="33.0" layoutY="268.0" text="split size (participants):" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="252.0" />
+            <TextField fx:id="tf_split_size" layoutX="177.0" layoutY="264.0" prefHeight="25.0" prefWidth="51.0" AnchorPane.leftAnchor="177.0" AnchorPane.topAnchor="249.0" />
+            <Separator layoutX="30.0" layoutY="272.0" prefWidth="200.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="282.0" />
+            <Label alignment="CENTER" layoutX="272.0" layoutY="298.0" text="Automation" textAlignment="CENTER" AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="245.0" AnchorPane.topAnchor="300.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="cb_auto" layoutX="35.0" layoutY="340.0" mnemonicParsing="false" text="simulate multiple seeds" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="340.0" />
+            <Label layoutX="30.0" layoutY="370.0" text="from" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="370.0" />
+            <TextField fx:id="tf_auto_from" layoutX="77.0" layoutY="366.0" prefHeight="25.0" prefWidth="99.0" AnchorPane.leftAnchor="77.0" AnchorPane.topAnchor="366.0" />
+            <Label layoutX="214.0" layoutY="370.0" text="to" AnchorPane.leftAnchor="214.0" AnchorPane.topAnchor="370.0" />
+            <TextField fx:id="tf_auto_to" layoutX="243.0" layoutY="366.0" prefHeight="25.0" prefWidth="99.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="366.0" />
+            <Button fx:id="bt_confirm" layoutX="452.0" layoutY="301.0" mnemonicParsing="false" onAction="#confirmChanges" text="OK" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="400.0" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

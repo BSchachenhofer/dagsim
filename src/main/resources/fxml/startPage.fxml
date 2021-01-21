@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="startPagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.StartPageController">
+    <Label layoutX="31.0" layoutY="32.0" text="Participants:" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="15.0" />
+    <TextField fx:id="tf_participants" layoutX="118.0" layoutY="11.0" prefHeight="25.0" prefWidth="55.0" AnchorPane.leftAnchor="118.0" AnchorPane.topAnchor="11.0" />
+    <Label layoutX="201.0" layoutY="15.0" text="Seed:" AnchorPane.leftAnchor="201.0" AnchorPane.topAnchor="15.0" />
+    <TextField fx:id="tf_seed" layoutX="245.0" layoutY="11.0" prefHeight="25.0" prefWidth="55.0" AnchorPane.leftAnchor="245.0" AnchorPane.topAnchor="11.0" />
+   <Label layoutX="328.0" layoutY="15.0" text="Idleness (in %):" AnchorPane.leftAnchor="328.0" AnchorPane.topAnchor="15.0" />
+   <TextField fx:id="tf_idleness" layoutX="426.0" layoutY="11.0" prefHeight="25.0" prefWidth="55.0" AnchorPane.leftAnchor="426.0" AnchorPane.topAnchor="11.0" />
+   <Label layoutX="499.0" layoutY="15.0" text="Create event (in %):" AnchorPane.leftAnchor="499.0" AnchorPane.topAnchor="15.0" />
+   <TextField fx:id="tf_create_event" layoutX="619.0" layoutY="11.0" prefHeight="25.0" prefWidth="55.0" AnchorPane.leftAnchor="619.0" AnchorPane.topAnchor="11.0" />
+   <Label layoutX="702.0" layoutY="15.0" text="Mode:" AnchorPane.leftAnchor="702.0" AnchorPane.topAnchor="15.0" />
+   <Label fx:id="l_attackMode" layoutX="761.0" layoutY="15.0" prefHeight="17.0" prefWidth="89.0" AnchorPane.leftAnchor="761.0" AnchorPane.topAnchor="15.0" />
+   <Button fx:id="configure_attack_mode" layoutX="861.0" layoutY="11.0" mnemonicParsing="false" onAction="#configureAttackMode" text="Configure" AnchorPane.leftAnchor="861.0" AnchorPane.topAnchor="11.0" />
+   <Separator layoutX="59.0" layoutY="66.0" prefHeight="0.0" prefWidth="401.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="43.0" />
+   <RadioButton fx:id="rb_equal_sync" layoutX="31.0" layoutY="71.0" mnemonicParsing="false" selected="true" text="Equal Sync-Times" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="57.0">
+      <toggleGroup>
+         <ToggleGroup fx:id="syncMode" />
+      </toggleGroup></RadioButton>
+    <Label layoutX="188.0" layoutY="71.0" text="Actions per participant:" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="57.0" />
+    <TextField fx:id="tf_action_rounds" layoutX="340.0" layoutY="67.0" prefHeight="25.0" prefWidth="55.0" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="53.0" />
+   <Label layoutX="418.0" layoutY="71.0" text="Sync-Time (in ms):" AnchorPane.leftAnchor="418.0" AnchorPane.topAnchor="57.0" />
+   <TextField fx:id="tf_sync_time" layoutX="619.0" layoutY="53.0" prefHeight="25.0" prefWidth="55.0" AnchorPane.leftAnchor="619.0" AnchorPane.topAnchor="53.0" />
+   <RadioButton fx:id="rb_random_sync" layoutX="31.0" layoutY="102.0" mnemonicParsing="false" text="Random Sync-Times" toggleGroup="$syncMode" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="88.0" />
+   <Label layoutX="187.0" layoutY="105.0" text="Simulation time (in s):" AnchorPane.leftAnchor="187.0" AnchorPane.topAnchor="88.0" />
+   <TextField fx:id="tf_simulation_time" layoutX="342.0" layoutY="101.0" prefHeight="25.0" prefWidth="55.0" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="84.0" />
+   <Label layoutX="416.0" layoutY="105.0" text="Mean Sync-Time per event (in ms):" AnchorPane.leftAnchor="418.0" AnchorPane.topAnchor="88.0" />
+   <TextField fx:id="tf_mean_sync_time" layoutX="619.0" layoutY="84.0" prefHeight="25.0" prefWidth="55.0" AnchorPane.leftAnchor="619.0" AnchorPane.topAnchor="84.0" />
+   <Label layoutX="702.0" layoutY="88.0" text="Mean event creation time (in ms):" AnchorPane.leftAnchor="702.0" AnchorPane.topAnchor="88.0" />
+   <TextField fx:id="tf_mean_creation_time" layoutX="895.0" layoutY="84.0" prefHeight="25.0" prefWidth="55.0" AnchorPane.leftAnchor="895.0" AnchorPane.topAnchor="84.0" />
+    <Button fx:id="bt_startSimulation" layoutX="31.0" layoutY="136.0" mnemonicParsing="false" onAction="#startSimulation" text="Start Simulation" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="114.0" />
+   <Label fx:id="l_consensus" alignment="CENTER" layoutX="524.0" layoutY="127.0" prefHeight="17.0" prefWidth="199.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="118.0" />
+    <Label layoutX="31.0" layoutY="140.0" text="Choose participant to display:" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="147.0" />
+    <ComboBox fx:id="cb_node_selection" layoutX="201.0" layoutY="132.0" onAction="#participantChanged" prefWidth="150.0" AnchorPane.leftAnchor="201.0" AnchorPane.topAnchor="143.0" />
+    <SplitPane dividerPositions="0.29797979797979796" layoutX="62.0" layoutY="51.0" prefHeight="398.0" prefWidth="522.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="175.0">
+        <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0">
+                <children>
+                    <VBox fx:id="graph_view" prefHeight="2000" prefWidth="2000" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0">
+                <children>
+               <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                 <tabs>
+                   <Tab text="Consensus">
+                     <content>
+                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                      <SplitPane dividerPositions="0.9" orientation="VERTICAL" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+                                          <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                  <children>
+                                                      <TableView fx:id="consensus_table" prefWidth="Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                          <columns>
+                                                              <TableColumn fx:id="col_round" prefWidth="50" text="Round" />
+                                                              <TableColumn fx:id="col_events" prefWidth="400" text="Events" />
+                                                              <TableColumn fx:id="col_witnesses" prefWidth="200" text="Witnesses" />
+                                                              <TableColumn fx:id="col_famous" prefWidth="150.0" text="Famous" />
+                                                              <TableColumn fx:id="col_undecided" prefWidth="150.0" text="Undecided" />
+                                                          </columns>
+                                                      </TableView>
+                                                  </children>
+                                              </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                  <children>
+                                                      <Label fx:id="l_consensus_order" wrapText="true" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+                                                  </children>
+                                              </AnchorPane>
+                                          </items>
+                                      </SplitPane>
+                              </children></AnchorPane>
+                     </content>
+                   </Tab>
+                   <Tab text="Confirmation Time">
+                     <content>
+                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                 <TableView fx:id="confirmation_table" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                   <columns>
+                                     <TableColumn fx:id="col_confirmation_event" prefWidth="75.0" text="Event" />
+                                       <TableColumn fx:id="col_confirmation_participant" prefWidth="75.0" text="Participant" />
+                                       <TableColumn fx:id="col_confirmation_creation" prefWidth="100.0" text="Creation" />
+                                       <TableColumn fx:id="col_received_round" prefWidth="75.0" text="Received" />
+                                       <TableColumn fx:id="col_confirmation" prefWidth="120.0" text="Final Timestamp" />
+                                     <TableColumn fx:id="col_confirmation_time" prefWidth="216.0" text="Confirmation-Time (in ms)" />
+                                   </columns>
+                                 </TableView>
+                              </children></AnchorPane>
+                     </content>
+                   </Tab>
+                 </tabs>
+               </TabPane>
+                </children>
+            </AnchorPane>
+        </items>
+    </SplitPane>
+</AnchorPane>
